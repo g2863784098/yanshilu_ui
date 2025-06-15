@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "subPackages": [
+    {
+      "root": "pages_AI_Login_Match",
+      "pages": [
+        "AI/AI",
+        "match/match",
+        "login/wechat_login",
+        "login/login",
+        "login/login_detail"
+      ]
+    },
+    {
+      "root": "pagesChat",
+      "pages": [
+        "chat",
+        "message"
+      ]
+    },
+    {
+      "root": "pagesMine",
+      "pages": [
+        "mine/mine_common",
+        "settings/settings",
+        "teacher/teacher",
+        "bill/bill",
+        "service/service",
+        "course/course",
+        "qualification/qualification",
+        "service/service_newbuilt",
+        "modify/modify",
+        "order/order_common",
+        "order/appraise",
+        "contactUs/contectUs"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "研师录",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F8F8F8",
+    "componentPlaceholder": {
+      "choice-selected": "view"
+    }
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取您的位置信息用于优化服务体验"
+    }
+  },
+  "usingComponents": {}
+}

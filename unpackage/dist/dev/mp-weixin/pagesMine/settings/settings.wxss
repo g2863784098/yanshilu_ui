@@ -1,0 +1,58 @@
+@import "../../uvue.wxss";
+:host{display:flex;flex-direction:column}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: transparent;
+  padding-top: 20rpx;
+}
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+.background-image-img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+.settings-list {
+  width: 100%;
+}
+.settings-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid rgba(217, 217, 217, 1);
+  min-height: 100rpx;
+}
+.icon-circle-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.icon {
+  width: 60rpx;
+  margin-left: 60rpx;
+}
+.settings-text {
+  height: 25rpx;
+  width: 100%;
+  font-size: 25rpx;
+  color: rgba(0, 0, 0, 1);
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -1.1rpx;
+  margin-left: 30rpx;
+}

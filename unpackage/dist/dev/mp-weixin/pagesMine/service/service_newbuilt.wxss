@@ -1,0 +1,343 @@
+@import "../../uvue.wxss";
+:host{display:flex;flex-direction:column}
+
+.status-bar {
+  width: 100%;
+  height: var(--status-bar-height);
+  background-color: #fff;
+}
+.header-container {
+  width: 100%;
+  height: 60rpx; /* 减少高度，使导航栏更贴近顶部 */
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #fff;
+  z-index: 100;
+  margin-bottom: 10rpx; /* 减少底部间距 */
+}
+
+/* 整体页面容器 */
+.page-container {
+  background: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+/* 表单容器 */
+.form-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+/* 表单区块包装器 */
+.form-section-wrapper {
+  position: relative;
+  margin-bottom: 20rpx;
+  border-radius: 16rpx;
+  padding: 1px; /* 为边框留出空间 */
+  background: linear-gradient(to bottom, #E9EAFF, #b096f7); /* 边框渐变色 */
+}
+
+/* 表单区块 */
+.form-section {
+  background: linear-gradient(to bottom,#fff 5%,#E9EAFF 60%, #cfb1f7 ); /* 使用上下渐变背景 */
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin: 0; /* 移除底部外边距，由wrapper控制 */
+}
+
+/* 区块标题 */
+.section-title {
+  font-size: 30rpx;
+  color: #9A63FF;
+  margin-bottom: 30rpx;
+}
+
+/* 一行布局容器 */
+.row-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20rpx;
+  margin-bottom: 30rpx;
+  width: 100%;
+}
+
+/* 特殊对齐的两行 */
+.form-item1 {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+
+/* 标准表单项保持垂直布局 */
+.form-item {
+  display: flex;  
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 25rpx;
+  width: 100%;
+}
+
+/* 表单标签 */
+.form-label {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 16rpx;
+}
+
+/* 最大字数提示 */
+.max-count {
+  font-size: 22rpx;
+  color: #999;
+  font-weight: normal;
+}
+
+/* 必填项标记 */
+.required::after {
+  content: '*';
+  color: #ff4d4f;
+  position: absolute;
+  top: 2rpx;
+  right: -20rpx;
+  font-size: 28rpx;
+}
+
+/* 表单输入框 */
+.form-input, .form-select{
+  height: 70rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  color: #333;
+  border: 2rpx solid #979797;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 价格输入框 */
+.price-input {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 表单文本域 */
+.form-textarea {
+  height: 200rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  font-size: 24rpx;
+  color: #333;
+  border: 2rpx solid #979797;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 错误提示样式 */
+.error-message {
+  color: #ff4d4f;
+  font-size: 24rpx;
+  margin-top: 8rpx;
+}
+
+/* 错误状态的输入框 */
+.input-error {
+  border-color: #ff4d4f !important;
+}
+
+/* 表单选择器容器 */
+.combobox-container {
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* 上传项容器 */
+.upload-item {
+  margin-top: 10rpx;
+}
+
+/* 上传按钮 */
+.upload-btn {
+  width: 160rpx;
+  height: 160rpx;
+  background-color: #f9f9f9;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2rpx solid #979797;
+}
+
+/* 上传图标 */
+.plus-icon {
+  font-size: 72rpx;
+  color: #ccc;
+  font-weight: 300;
+}
+
+/* 底部按钮区域 */
+.bottom-btn-area {
+  padding: 30rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 确认按钮 */
+.confirm-btn {
+  height: 70rpx;
+  width: 180rpx;
+  background:linear-gradient(to bottom,#A5A9F7,#464EF8 90%);
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 100;
+}
+
+/* 封面图片网格 */
+.cover-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 -5rpx;
+}
+.cover-item {
+  width: calc(33.33% - 10rpx);
+  height: 215rpx;
+  margin: 0 5rpx 15rpx;
+  position: relative;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.delete-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40rpx;
+  height: 40rpx;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  border-bottom-left-radius: 8rpx;
+}
+
+/* 时间选择器包装容器 */
+.time-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: 20rpx;
+}
+
+/* 单个时间选择器 */
+.time-selector {
+  flex: 1;
+  width: 0; /* 让flex:1生效 */
+}
+
+/* 水平排列的表单项 */
+.horizontal-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 25rpx;
+}
+
+/* 水平排列的标签 */
+.form-label-horizontal {
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #333;
+  width: 150rpx;
+  text-align: left;
+}
+
+/* 水平排列的输入框 */
+.form-input-horizontal {
+  height: 70rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  color: #333;
+  border: 2rpx solid #979797;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+/* 选择器容器 */
+.select-container {
+  flex: 1;
+}
+
+/* 价格提示文字 */
+.price-hint {
+  font-size: 20rpx;
+  color: #979797;
+  margin-top: 5rpx;
+}
+
+/* 具体内容区域的标签 */
+.form-label-small {
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 16rpx;
+}
+
+/* 表单输入框占位符 */
+.form-input::-webkit-input-placeholder, .form-textarea::-webkit-input-placeholder {
+  font-size: 24rpx;
+  color: #979797;
+}
+.form-input::placeholder, .form-textarea::placeholder {
+  font-size: 24rpx;
+  color: #979797;
+}
+
+/* 表单文本域 */
+.form-textarea {
+  height: 200rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  font-size: 24rpx;
+  color: #333;
+  border: 2rpx solid #979797;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 确保下拉框中的文字大小与输入框一致 */
+.choice-text {
+  font-size: 24rpx !important;
+}
+
+/* 确保所有下拉框中的文字大小统一 */
+ .choice-container, .choice-text, .choice-item {
+  font-size: 24rpx !important;
+}

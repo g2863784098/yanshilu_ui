@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "top-navbar": "../../components/top-navbar/top-navbar",
+    "header": "../../components/navigationTitleBar/header"
+  }
+}

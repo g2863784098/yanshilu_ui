@@ -1,0 +1,1 @@
+{"version":3,"file":"contectUs.js","sources":["pagesMine/contactUs/contectUs.vue?type=page"],"sourcesContent":["import MiniProgramPage from '/Users/ghw/Documents/waibao/yanshilu_ui/pagesMine/contactUs/contectUs.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;;;AACA,GAAG,WAAW,eAAe;"}

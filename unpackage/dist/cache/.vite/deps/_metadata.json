@@ -1,0 +1,25 @@
+{
+  "hash": "1884e555",
+  "configHash": "3e57a067",
+  "lockfileHash": "2de472c0",
+  "browserHash": "b6ab68f1",
+  "optimized": {
+    "lottie-web": {
+      "src": "../../../../../uni_modules/c-lottie/node_modules/lottie-web/build/player/lottie.js",
+      "file": "lottie-web.js",
+      "fileHash": "b401bce1",
+      "needsInterop": true
+    },
+    "fuse.js": {
+      "src": "../../../../../node_modules/fuse.js/dist/fuse.mjs",
+      "file": "fuse__js.js",
+      "fileHash": "ba52181d",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-Y2F7D3TJ": {
+      "file": "chunk-Y2F7D3TJ.js"
+    }
+  }
+}

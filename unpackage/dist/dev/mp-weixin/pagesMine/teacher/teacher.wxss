@@ -1,0 +1,649 @@
+@import "../../uvue.wxss";
+:host{display:flex;flex-direction:column}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+.background-image-img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* 全局样式变量 */
+page {
+    --gradient-blue: linear-gradient(135deg, #1E90FF, #00BFFF);
+    --gradient-blue-light: linear-gradient(135deg, #87CEEB, #48D1CC);
+    --text-secondary: #666666;
+    --text-light: #999999;
+    --bg-color: #F5F9FC;
+    font-family: "PingFang SC";
+}
+  
+  /* 加载动画容器 */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100rpx 0;
+    height: 60vh;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    position: relative;
+    overflow: hidden;
+    background-color:transparent;
+}
+  
+  /* 内容区域 */
+.content-area {
+    flex: 1;
+}
+.teacher-profile-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 70rpx 30rpx 0 30rpx;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    overflow: visible;
+    margin-bottom: 20rpx;
+}
+  
+  /* 模仿match页面的三层嵌套结构 */
+.teacher-profile-outer {
+    width: 100%;
+    height: 100%;
+    border-radius: 40rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    background: transparent;
+    overflow: visible;
+}
+.teacher-profile-outer-gradient {
+    width: 100%;
+    height: 100%;
+    border-radius: 40rpx;
+    padding: 2rpx;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, rgba(228, 241, 255, 1) 0%, rgba(34, 136, 249, 1) 100%);
+    overflow: visible;
+}
+.teacher-profile-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 38rpx;
+    background: #fff;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 40rpx;
+    padding-top: 20rpx;
+    overflow: visible;
+}
+  
+  /**
+   * 渐变遮罩效果
+   */
+.teacher-profile-inner::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 38rpx;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(194, 221, 250, 0.2) 11.54%, rgba(34, 136, 249, 0.2) 111.54%);
+    z-index: 1;
+    overflow: visible;
+}
+  
+  /* 老师个人信息区域 */
+.teacher-profile {
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    overflow: visible;
+}
+.avatar-wrapper {
+    width: 180rpx;
+    height: 180rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    margin-top: -80rpx;
+}
+
+  /*
+   * @description 头像外层正方形底板
+   */
+.avatar-outer {
+    width: 180rpx;
+    height: 180rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+  /*
+   * @description 头像内层正方形底板
+   */
+.avatar-inner {
+    width: 168rpx; /* 200rpx - 6rpx*2 */
+    height: 168rpx;
+    border-radius: 30rpx;
+    background: rgba(239, 240, 255, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+  /*
+   * @description 头像图片本身
+   */
+.avatar {
+    width: 180rpx;
+    height: 180rpx;
+    object-fit: cover;
+    background-color: transparent;
+    border: none;
+    border-radius: 30rpx;
+}
+.teacher-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.teacher-name-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10rpx;
+}
+    /* 昵称部分 */
+.name-row {
+      display: flex;
+      margin-left: 20rpx;
+      margin-top: 5rpx;
+}
+.teacher-info {
+      flex: 1;
+      display: flex;
+      align-items: center;
+}
+.teacher-name {
+      font-family: PingFang SC;
+    font-weight: 400;
+    font-size: 32rpx;
+    line-height: 100%;
+    letter-spacing: -0.55px;
+    color: rgba(0, 0, 0, 1);
+}
+.certification-image{
+      height:40rpx;
+      margin-left: 10rpx;
+}
+.campus-ambassador-image{
+      height:40rpx;
+      margin-left: 10rpx;
+}
+.education-info-container{
+      display: flex;
+      flex-direction: row;
+      margin-top: 20rpx;
+}
+.education-info-school {
+      font-family: PingFang SC;
+      font-weight: 400;
+      font-size: 22rpx;
+      line-height: 100%;
+      letter-spacing: -0.55px;
+      color: rgba(70, 78, 248, 1);
+      margin-left: 20rpx;
+}
+.education-info-major {
+     font-family: PingFang SC;
+      font-weight: 400;
+      font-size: 22rpx;
+      line-height: 100%;
+      letter-spacing: -0.55px;
+      color: rgba(0, 0, 0, 0.5);
+      margin-left: 20rpx;
+}
+.profile-intro {
+      padding: 24rpx;
+      margin-top: 20rpx;
+      position: relative;
+}
+.intro-text {
+      font-family: PingFang SC;
+      font-weight: 400;
+      font-size: 22rpx;
+      line-height: 100%;
+      letter-spacing: -0.55px;
+      color: rgba(0, 0, 0, 1);
+}
+.toggle-intro-btn {
+      font-family: PingFang SC;
+      font-weight: 400;
+      font-size: 22rpx;
+      line-height: 100%;
+      letter-spacing: -0.55px;
+      color: rgba(70, 78, 248, 1);
+      position: absolute;
+      right: 24rpx;
+      bottom: 10rpx;
+      padding: 8rpx;
+      cursor: pointer;
+}
+    
+    /* 标签页导航 */
+.tab-navigation {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      background-color: transparent;
+      padding: 20rpx 30rpx 0;
+      border-radius: 0;
+      position: relative;
+      z-index: 2;
+}
+.tab-item {
+      padding: 20rpx;
+      color: var(--text-secondary);
+      position: relative;
+      transition: all 0.3s ease;
+      min-width: 80px;
+      text-align: center;
+      margin-left: -280px;
+      margin-top: -10px;
+      z-index: 2;
+      font-family: PingFang SC;
+      font-weight: 400;
+      font-size: 30rpx;
+      line-height: 100%;
+      letter-spacing: -0.55px;
+}
+.tab-item.active {
+      color: rgba(95, 38, 247, 1);
+}
+    
+
+    
+    /* 动态和服务容器 */
+.services-container {
+      background-color: transparent;
+      border-radius: 0 0 38rpx 38rpx;
+      padding:0 40rpx 0 40rpx;
+      position: relative;
+      z-index: 2;
+}
+    
+    /* 服务部分样式 */
+.service-card {
+      display: flex;
+      flex-direction: column;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 20rpx;
+      padding: 30rpx 15rpx 30rpx 15rpx;
+      margin-bottom: 30rpx;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.service-card-header {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      margin-left:30rpx;
+}
+.service-image-container {
+      width: 70px;
+      height: 70px;
+      margin-right: 15px;
+      flex-shrink: 0;
+}
+.service-card-outer{
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      z-index: 2;
+}
+.service-image {
+      width: 150rpx;
+      height: 150rpx;
+      border-radius: 20rpx;
+      border:6rpx solid rgba(255, 255, 255, 1);
+}
+.service-image-popup{
+      width: 100%;
+      margin-top: -324rpx;
+}
+.image-gradient-overlay{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height:50%; /* 下五分之一 */
+      pointer-events: none;
+      /* 渐变从透明到白色，从上到下 */
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 100%);
+      /* 兼容部分小程序可能需要z-index */
+      z-index: 2;
+}
+.service-title-price {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+}
+.service-title {
+      font-family: PingFang SC;
+      font-weight: 400;
+      font-size: 32rpx;
+      line-height: 100%;
+      letter-spacing: -0.55px;
+      color: rgba(0, 0, 0, 1);
+      margin-top: 10rpx;
+}
+.service-price {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 10rpx;
+}
+.service-price-popup{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 10rpx;
+      margin-left: 40rpx;
+}
+.service-price-header{
+      font-family: PingFang SC;
+      font-weight: 400;
+      font-size: 20rpx;
+      line-height: 100%;
+      letter-spacing: -0.55px;
+      color: rgba(70, 78, 248, 1);
+      margin-top:12rpx;
+}
+.service-price-text{
+      font-family: PingFang SC;
+      font-weight: 400;
+      font-size: 32rpx;
+      line-height: 100%;
+      letter-spacing: -0.55px;
+      color: rgba(70, 78, 248, 1);
+      margin-top:10rpx;
+}
+.service-type{
+      display: flex;
+      flex-direction: row;
+      margin-top:10rpx;
+      margin-left: 40rpx;
+}
+.service-text-popup{
+      font-family: PingFang SC;
+      font-weight: 400;
+      font-size: 24rpx;
+      line-height: 100%;
+      letter-spacing: -0.68px;
+      color: rgba(0, 0, 0, 1);
+      margin-right: 10rpx;
+}
+.service-horizontal-line{
+      font-family: PingFang SC;
+      font-weight: 400;
+      font-size: 24rpx;
+      line-height: 100%;
+      letter-spacing: -0.68px;
+      color: rgba(34, 136, 249, 0.6);
+      margin-right: 10rpx;
+}
+.service-description {
+      line-height: 1.5;
+      margin-top:15rpx;
+      margin-right: 10rpx;
+      font-family: PingFang SC;
+      font-weight: 400;
+      font-size: 22rpx;
+      line-height: 100%;
+      letter-spacing: -0.55px;
+      color: rgba(0, 0, 0, 1);
+      width: 400rpx;
+}
+.service-description-popup{
+      width: 100%;
+}
+.consult-button-container {
+      margin-top: 20px;
+      background-color: transparent;
+      margin-bottom: 15rpx;
+      margin-left: 30rpx;
+      margin-right: 30rpx;
+}
+.consult-button {
+    width: 100%;
+    height: 76rpx;
+    background: linear-gradient(180deg, #A5A9F7 0%, rgba(70, 78, 248, 0.9) 100%);
+    border-radius: 45rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32rpx;
+    border-radius: 20rpx;
+    flex-direction: row;
+    margin-top: 10rpx;
+}
+.consult-button-image {
+      width: 36rpx;
+      height: 36rpx;
+      margin-right: 30rpx;
+}
+.consult-button-text {
+      font-size: 32rpx;
+    color: rgba(255, 255, 255, 1);
+    font-family: PingFang SC;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.68px;
+    text-align: center;
+}
+
+    /* 空状态提示 */
+.empty-tip {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      color: var(--text-light);
+      font-size: 16px;
+}
+.empty-tip::before {
+      content: '';
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+      background-color: rgba(30, 144, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+.services-section {
+      margin: 0 30rpx;
+      position: relative;
+      z-index: 1;
+      background-color: transparent;
+      overflow: visible;
+      margin-top: -2rpx;
+}
+    
+    /* 模仿match页面的三层嵌套结构 */
+.services-section-outer {
+      width: 100%;
+      height: 100%;
+      border-radius: 40rpx;
+      box-sizing: border-box;
+      display: flex;
+      align-items: stretch;
+      justify-content: stretch;
+      background: transparent;
+      overflow: visible;
+}
+.services-section-outer-gradient {
+      width: 100%;
+      height: 100%;
+      border-radius: 40rpx;
+      padding: 2rpx;
+      box-sizing: border-box;
+      background: linear-gradient(180deg, rgba(228, 241, 255, 1) 0%, rgba(34, 136, 249, 1) 100%);
+      overflow: visible;
+}
+.services-section-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 38rpx;
+      background: #fff;
+      overflow: visible;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 0;
+}
+    
+    /**
+     * 渐变遮罩效果
+     */
+.services-section-inner::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 38rpx;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(194, 221, 250, 0.2) 11.54%, rgba(34, 136, 249, 0.2) 111.54%);
+      z-index: 1;
+}
+    
+    /* 服务详情浮窗样式 */
+.service-detail-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+.popup-mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+}
+.popup-content {
+      
+      position: relative;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      width: 648rpx;
+      border-radius: 40rpx;
+}
+.popup-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: invisible;
+      border-radius: 40rpx;
+}
+.service-info {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30rpx;
+      overflow: visible;
+}
+.service-name {
+      font-family: PingFang SC;
+      font-weight: 400;
+      font-size: 32rpx;
+      line-height: 100%;
+      letter-spacing: -0.55px;
+      color: rgba(0, 0, 0, 1);
+      margin-left: 40rpx;
+      margin-top: -50rpx;
+      z-index: 1000;
+}
+.service-type-info{
+      margin-bottom: 30rpx;
+}
+.info-title {
+      font-size: 30rpx;
+      font-weight: bold;
+      margin-bottom: 15rpx;
+      color: #333;
+}
+.info-content {
+      background-color: #f8f8f8;
+      border-radius: 8rpx;
+      padding: 15rpx;
+}
+.info-item {
+      display: flex;
+      margin-bottom: 10rpx;
+}
+.item-label {
+      color: #666;
+      width: 150rpx;
+}
+.item-value {
+      color: #333;
+      flex: 1;
+}
+.description-content {
+      padding: 20rpx 40rpx 20rpx 40rpx;
+      line-height: 1.5;
+      font-family: PingFang SC;
+      font-weight: 400;
+      font-size: 22rpx;
+      line-height: 100%;
+      letter-spacing: -0.55px;
+      color: rgba(0, 0, 0, 1);
+}
+

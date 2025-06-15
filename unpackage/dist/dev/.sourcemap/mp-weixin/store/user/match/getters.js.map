@@ -1,0 +1,1 @@
+{"version":3,"file":"getters.js","sources":["store/user/match/getters.js"],"sourcesContent":["/**\n * match模块的getters\n * @module store/user/match/getters\n */\n\nexport default {\n\n}; "],"names":[],"mappings":";AAKA,MAAe,UAAA,CAEf;;"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"qualification.js","sources":["pagesMine/qualification/qualification.vue?type=page"],"sourcesContent":["import MiniProgramPage from '/Users/ghw/Documents/waibao/yanshilu_ui/pagesMine/qualification/qualification.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;AACA,GAAG,WAAW,eAAe;"}

@@ -1,0 +1,244 @@
+{
+	"pages": [ 
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}
+	],
+	"subPackages": [
+		{
+			"root": "pages_AI_Login_Match",
+			"pages": [
+				{
+					"path": "AI/AI",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},		
+				{
+					"path": "match/match",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "login/wechat_login",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "login/login",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "login/login_detail",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "pagesChat",
+			"pages": [
+				{
+					"path": "chat",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "message",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "pagesMine",
+			"pages": [
+				{
+					"path": "mine/mine_common",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "settings/settings",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "teacher/teacher",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "bill/bill",
+					"style": {
+						"navigationBarTitleText": "我的钱包"
+					}
+				},
+				{
+					"path": "service/service",
+					"style": {
+						"navigationBarTitleText": "服务设置",
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "course/course",
+					"style": {
+						"navigationBarTitleText": "我的课程",
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "qualification/qualification",
+					"style": {
+						"navigationBarTitleText": "资质认证"
+					}
+				},
+				{
+					"path": "service/service_newbuilt",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "modify/modify",
+					"style": {
+						"navigationBarTitleText": "修改资料"
+					}
+				},
+				{
+					"path": "order/order_common",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "order/appraise",
+					"style": {
+						"navigationBarTitleText": "评价"
+					}
+				},
+				{
+					"path": "contactUs/contectUs",
+					"style": {
+						"navigationBarTitleText": "联系我们"
+					}
+				}
+			]
+		}
+	],
+	// "preloadRule": {
+	// 	"pagesMine/mine/mine_common": {
+	// 		"network": "all",
+	// 		"packages": ["__APP__"]
+	// 	},
+	// 	"pages_AI_Login_Match/match/match": {
+	// 		"network": "all",
+	// 		"packages": ["__APP__"]
+	// 	},
+	// 	"pages_AI_Login_Match/AI/AI": {
+	// 		"network": "all",
+	// 		"packages": ["__APP__"]
+	// 	},
+	// 	"pagesChat/chat": {
+	// 		"network": "all",
+	// 		"packages": ["__APP__"]
+	// 	},
+	// 	"pagesChat/message": {
+	// 		"network": "all",
+	// 		"packages": ["__APP__"]
+	// 	},
+	// 	"pages_AI_Login_Match/login/login": {
+	// 		"network": "all",
+	// 		"packages": ["__APP__"]
+	// 	},
+	// 	"pages_AI_Login_Match/login/wechat_login": {
+	// 		"network": "all",
+	// 		"packages": ["__APP__"]
+	// 	},
+	// 	"pages_AI_Login_Match/login/login_detail": {
+	// 		"network": "all",
+	// 		"packages": ["__APP__"]
+	// 	},
+	// 	"pagesMine/settings/settings": {
+	// 		"network": "all",
+	// 		"packages": ["__APP__"]
+	// 	},
+	// 	"pagesMine/bill/bill": {
+	// 		"network": "all",
+	// 		"packages": ["__APP__"]
+	// 	},
+	// 	"pagesMine/service/service": {
+	// 		"network": "all",
+	// 		"packages": ["__APP__"]
+	// 	},
+	// 	"pagesMine/course/course": {
+	// 		"network": "all",
+	// 		"packages": ["__APP__"]
+	// 	},
+	// 	"pagesMine/order/order_common": {
+	// 		"network": "all",
+	// 		"packages": ["__APP__"]
+	// 	},
+	// 	"pagesMine/qualification/qualification": {
+	// 		"network": "all",
+	// 		"packages": ["__APP__"]
+	// 	},
+	// 	"pagesMine/service/service_newbuilt": {
+	// 		"network": "all",
+	// 		"packages": ["__APP__"]
+	// 	},
+	// 	"pagesMine/contactUs/contectUs": {
+	// 		"network": "all",
+	// 		"packages": ["__APP__"]
+	// 	},
+	// 	"pagesMine/modify/modify": {
+	// 		"network": "all",
+	// 		"packages": ["__APP__"]
+	// 	},
+	// 	"pagesMine/teacher/teacher": {
+	// 		"network": "all",
+	// 		"packages": ["__APP__"]
+	// 	}
+	// },
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "研师录",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#F8F8F8",
+		"componentPlaceholder": {
+		"choice-selected": "view"
+	}
+
+	},
+
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^history-sidebar$": "pages_AI_Login_Match/AI/ai-chat/HistorySidebar",
+			"^message-list$": "pages_AI_Login_Match/AI/ai-chat/MessageList",
+			"^filter-section$": "pages_AI_Login_Match/AI/ai-chat/FilterSection", 
+			"^mode-selector$": "pages_AI_Login_Match/AI/ai-chat/ModeSelector",
+			"^top-navbar$": "components/top-navbar/top-navbar",
+			"^header$": "components/navigationTitleBar/header",
+			"^choice-selected$": "pagesMine/components/combobox/combobox"
+		}
+	},
+	"uniIdRouter": {},
+	"dependencies": {
+		"lottie-miniprogram": "npm:@tencent/lottie-miniprogram"
+	}
+}

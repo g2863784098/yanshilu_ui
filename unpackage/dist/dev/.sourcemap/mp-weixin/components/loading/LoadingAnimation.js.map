@@ -1,0 +1,1 @@
+{"version":3,"file":"LoadingAnimation.js","sources":["/Users/ghw/Documents/waibao/yanshilu_ui/components/loading/LoadingAnimation.vue?type=component"],"sourcesContent":["import Component from '/Users/ghw/Documents/waibao/yanshilu_ui/components/loading/LoadingAnimation.vue'\nwx.createComponent(Component)"],"names":["Component"],"mappings":";;AACA,GAAG,gBAAgBA,yBAAS,SAAA;"}

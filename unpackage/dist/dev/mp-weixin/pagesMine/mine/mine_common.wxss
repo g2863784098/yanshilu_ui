@@ -1,0 +1,245 @@
+@import "../../uvue.wxss";
+:host{display:flex;flex-direction:column}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding-bottom: 55px; /* 为自定义tabBar留出空间 */
+  background-color: #ffffff;
+}
+.top-bg-wrapper {
+  position: relative;
+  height:100%;
+  width: 100%;
+}
+.top-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  z-index: 0;
+}
+.overlay-content {
+  position: absolute;
+  top:450rpx;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-color:rgba(255, 255, 255, 1);
+  border-radius:140rpx 140rpx 0 0;
+  overflow: visible;
+}
+/* 用户信息区样式 */
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  border-bottom: 1px solid #f0f0f0;
+  min-height: 450rpx;
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+}
+.campus-ambassador{
+  height: 190rpx;
+  width: 46rpx;
+  top:0;
+  left:570rpx;
+  position: absolute;
+}
+.avatar-wrapper {
+  width: 180rpx;
+  height: 180rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  margin-top: -90rpx;
+}
+
+/*
+ * @description 头像外层正方形底板
+ */
+.avatar-outer {
+  width: 180rpx;
+  height: 180rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+ * @description 头像内层正方形底板
+ */
+.avatar-inner {
+  width: 168rpx; /* 200rpx - 6rpx*2 */
+  height: 168rpx;
+  border-radius: 30rpx;
+  background: rgba(239, 240, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+ * @description 头像图片本身
+ */
+.avatar {
+  width: 180rpx;
+  height: 180rpx;
+  object-fit: cover;
+  background-color: transparent;
+  border: none;
+}
+.nickname-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30rpx;
+  overflow: visible;
+}
+.login-text {
+  font-size: 38rpx;
+  text-align: center;
+  font-family: PingFang SC;
+  font-weight: 550;
+  line-height: 100%;
+  letter-spacing: -1.26rpx;
+}
+.middle-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40rpx;
+}
+.middle-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}
+.middle-icon{
+  height:85rpx;
+}
+.middle-text{
+  height: 25rpx;
+  width: 100%;
+  font-size: 25rpx;
+  color: rgba(0, 0, 0, 1);
+  text-align: center;
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -1.1rpx;
+  margin-top: 20rpx;
+}
+/* 调试信息 */
+.debug-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10rpx;
+  border: 1px dashed #ccc;
+  padding: 5rpx;
+  font-size: 24rpx;
+}
+.debug-text {
+  color: #666;
+  margin-bottom: 4rpx;
+}
+
+/* 修改个人信息链接样式 */
+.edit-profile-link {
+  font-size: 28rpx;
+  color: #2196F3;
+  text-decoration: underline;
+  margin-bottom: 15rpx;
+}
+
+/* 菜单列表 */
+.menu-list {
+  width: 100%;
+}
+
+/*
+ * @description 菜单项容器，设置为相对定位以便子元素绝对定位
+ */
+.menu-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid rgba(217, 217, 217, 1);
+  position: relative; /* 新增：为绝对定位子元素做准备 */
+  min-height: 100rpx;
+}
+.icon-circle-info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.icon-image{
+  width: 60rpx;
+  margin-left: 60rpx;
+}
+/**
+ * @description 右侧箭头图标，绝对定位于父容器右侧
+ */
+.arrow-image{
+  height: 28rpx;
+  position: absolute; /* 新增：绝对定位 */
+  right: 40rpx;        /* 新增：距离右侧30rpx，可根据需要调整 */
+}
+.success {
+  background-color: rgba(76, 175, 80, 0.1);
+}
+.warning {
+  background-color: rgba(255, 82, 82, 0.1);
+}
+.info {
+  background-color: rgba(33, 150, 243, 0.1);
+}
+.icon-text {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.success .icon-text {
+  color: #4CAF50;
+}
+.warning .icon-text {
+  color: #FF5252;
+}
+.info .icon-text {
+  color: #2196F3;
+}
+.menu-text {
+  height: 25rpx;
+  width: 100%;
+  font-size: 25rpx;
+  color: rgba(0, 0, 0, 1);
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -1.1rpx;
+  margin-left: 30rpx;
+}
+.certification-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 40rpx;
+}
+.user-tag{
+  height: 50rpx;
+  margin-left: 15rpx;
+}

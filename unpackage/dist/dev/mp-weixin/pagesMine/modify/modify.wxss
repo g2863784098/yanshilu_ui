@@ -1,0 +1,271 @@
+@import "../../uvue.wxss";
+:host{display:flex;flex-direction:column}
+
+.header-container {
+	/**
+	 * @description 固定顶部导航栏，背景不透明，确保在最上层
+	 */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #fff;
+	z-index: 100;
+}
+.container {
+	/**
+	 * @description 填充除header外的所有区域，底部透明
+	 */
+	position: absolute;
+	top: 206rpx; /* header高度 */
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	background: transparent;
+	z-index: 1;
+	overflow: hidden;
+}
+.modify-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: transparent;
+}
+.form-container {
+	background-color: transparent;
+}
+.form-item {
+	padding: 10rpx 0;
+}
+
+/* 水平排列的表单项样式 */
+.horizontal-item {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 2rpx solid rgba(217, 217, 217, 1);
+	height: 110rpx;
+}
+
+/**
+ * @description 表单标签样式，文字靠左对齐
+ */
+/**
+ * @description 表单标签样式，确保所有内容左对齐
+ */
+.form-label {
+	line-height: 110rpx; /* 与 .horizontal-item 的 height 保持一致 */
+	position: relative;
+	display: block; /* 使用 block 保证内容左对齐 */
+	margin-left: 40rpx;
+	font-size: 28rpx;
+	font-family: PingFang SC;
+	font-weight: 500;
+	letter-spacing: -0.55px;
+	color: rgba(0, 0, 0, 1);
+	text-align: left; /* 明确指定文字靠左 */
+}
+
+/* 水平布局时标签样式 */
+.horizontal-item .form-label {
+	margin-bottom: 0;
+	width: 160rpx;
+	flex-shrink: 0;
+}
+
+/**
+ * 输入区域容器
+ * 使容器内的元素靠右对齐
+ */
+.input-container {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end; /* 元素靠右 */
+	align-items: flex-end;     /* 元素在交叉轴底部对齐 */
+	padding-left: 40rpx;
+	padding-right: 40rpx;
+	position: relative; /* 使字数统计可以绝对定位 */
+}
+
+/* 个人介绍的输入容器特殊处理，不需要右对齐 */
+.form-item:not(.horizontal-item) .input-container {
+	display: block;
+	justify-content: flex-start;
+}
+
+/**
+ * 表单输入框样式
+ * 文字内容靠右对齐
+ */
+.form-input {
+	width: 100%;
+	height: 80rpx;
+	background-color: #f8f8f8;
+	border-radius: 8rpx;
+
+	font-size: 24rpx;
+	text-align: right; /* 文字靠右 */
+	background-color: transparent;
+
+	font-family: PingFang SC;
+	font-weight: 400;
+	line-height: 100%;
+	letter-spacing: -1.1rpx;
+}
+
+/* 水平布局中的输入框样式调整，限制最大宽度，保持右对齐 */
+.horizontal-item .form-input {
+	max-width: 400rpx;
+	width: auto;
+}
+.form-textarea {
+	width: 100%;
+	height: 400rpx;
+	background-color: #f8f8f8;
+	border-radius: 8rpx;
+	padding: 30rpx 40rpx;
+	font-size: 28rpx;
+	border-radius: 40rpx;
+	font-family: PingFang SC;
+	font-weight: 400;
+	line-height: 100%;
+	letter-spacing: -1.1rpx;
+	padding-bottom: 60rpx; /* 增加底部内边距，避免字数统计遮挡内容 */
+	background: linear-gradient(180deg, rgba(217, 217, 217, 0.1) 11.54%, rgba(126, 126, 126, 0.1) 111.54%);
+	-webkit-backdrop-filter: blur(30px);
+	        backdrop-filter: blur(30px);
+}
+.word-count {
+	text-align: right;
+	font-size: 24rpx;
+	color: rgba(0, 0, 0, 0.6);
+	margin-top: 10rpx;
+	position: absolute;
+	bottom: 30rpx;
+	right: 80rpx;
+	z-index: 2;
+	font-family: PingFang SC;
+	font-weight: 400;
+	line-height: 100%;
+	letter-spacing: -1.1rpx;
+}
+.avatar-wrapper {
+	position: relative;
+	width: 80rpx;
+	height: 80rpx;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.avatar {
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 75rpx;
+	background-color: #f0f0f0;
+	z-index: 5;
+}
+.radio-group {     
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	width: auto;
+}
+.radio-item {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-left: 80rpx;
+}
+.radio-circle {
+	width: 24rpx;
+	height: 24rpx;
+	border-radius: 20rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid rgba(86, 86, 86, 1)
+}
+.radio-circle.selected {
+	background: rgba(95, 38, 247, 1);
+}
+.radio-text {
+	font-size: 28rpx;
+	color: #333333;
+	margin-left: 10rpx;
+}
+.password-item {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.password-value {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.arrow-right {
+	font-size: 28rpx;
+	color: #999999;
+	margin-left: 10rpx;
+}
+.save-button-container {
+	padding: 20rpx 40rpx 20rpx;
+}
+.save-button {
+	width: 100%;
+	height: 76rpx;
+	background: linear-gradient(180deg, #A5A9F7 0%, rgba(70, 78, 248, 0.9) 100%);
+	color: #ffffff;
+	border-radius: 45rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 32rpx;
+	border-radius: 20rpx;
+	flex-direction: row;
+	margin-top: 60rpx;
+}
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+.background-image image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.save-button-image{
+	width: 36rpx;
+	height: 36rpx;
+	margin-right: 30rpx;
+}
+.save-button-text{
+	font-size: 32rpx;
+	color: rgba(255, 255, 255, 1);
+	font-family: PingFang SC;
+	font-weight: 400;
+	line-height: 100%;
+	letter-spacing: -0.68px;
+	text-align: center;
+}
+/* 头像底部正方形背景样式 */
+.avatar-square-bg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80rpx;
+  height: 80rpx;
+  background: rgba(239, 240, 255, 1);
+  border-radius: 4rpx;
+  z-index: 1;
+}
